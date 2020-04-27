@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+<body>
+  <%- include('./partials/header') %>
+  <main id="home-main">
+    <div>
+      <div id="greeting">
+        <p class="title">Welcome to your bar <%=username%>!</p> <br>
+        <img class="lineBreak" src="/pictures/line.png"><br><br>
+      </div>
+      <div id="button-div-home">
+        <button class="button" onclick="location.href = 'search';">Explore cocktails</button>
+        <button class="button" onclick="location.href = 'all-recipe-books';">Your cocktail cabinets</button>
+        <button class="button" onclick="location.href = 'about-devs';">About developers</button>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

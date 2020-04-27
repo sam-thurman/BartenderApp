@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+
+<body>
+  <%- include('./partials/header') %>
+  <main><br>
+    <h2 id="recipe-head" class="title"> <%=username%>'s Cocktail Cabinets </h2><br><br>
+    <img id="cabinet" src="/pictures/cocktailCabinet.jpg"><br><br>
+    <h4 id="recipe-book-intro">
+      <br>Step 1. Create a personalized cocktail cabinet. 
+      <br><br>Step 2. Discover hundreds of unique cocktail recipes. 
+      <br><br>Step 3. Save your favorites! 
+      <br><br>Step 4. Enjoy! <br><br>
+    </h4> <br>
+    <img class="lineBreak" src="/pictures/line.png"><br><br>
+    <% cocktailLists.forEach(cocktailList => { %>
+    <form action="<%= `/recipe-book/${cocktailList.list_name}`%>" method="get">
+      <button class="small-button" type="submit"><%= cocktailList.list_name %></button>
+    </form>
+    <% }) %>
+    
+    <form action="<%= '/newCocktailList' %>" method="post">
+      <input class="text-input" type="text" name="listName" value="Please Enter List Name"><br>
+      <button class="small-button" type="submit">Add new Cocktail Cabinet</button>
+    </form><br><br><br>
+  </main>
+</body>
+
+</html>
